@@ -2,8 +2,7 @@
 services:
   frontend:
     build:
-      context: .
-      dockerfile: Dockerfile.frontend
+      context: ./client
     ports:
       - "80:80"
     depends_on:
@@ -11,10 +10,9 @@ services:
 
   backend:
     build:
-      context: .
-      dockerfile: Dockerfile.backend
-      target: backend
+      context: ./server
     ports:
       - "3001:3001"
     volumes:
       - ./uploads:/app/uploads
+

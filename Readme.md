@@ -1,14 +1,43 @@
 
 # User Profile Web App
 
+# Project Structure
+
+```
+project-root/
+├── client/                 # React frontend
+│   ├── Dockerfile          # Frontend Dockerfile
+│   └── ...                 # All frontend code
+├── server/                 # Node.js backend
+│   ├── Dockerfile          # Backend Dockerfile
+│   └── ...                 # All backend code
+├── docker-compose.yml
+├── nginx.conf              # For frontend nginx
+└── README.md
+```
+
+# User Profile Web App
+
 ## Requirements
 - Docker
 
 ## Setup
 1. Clone the repository
-2. Run `docker-compose up --build`
-3. Visit the frontend at `http://localhost`
-4. Backend API is at `http://localhost:3001`
+2. Make sure your folder structure is:
+   - client/
+     - Dockerfile
+     - React app files
+   - server/
+     - Dockerfile
+     - Node backend files
+   - nginx.conf (in root)
+   - docker-compose.yml (in root)
+3. Run `docker-compose up --build`
+4. Visit the frontend at `http://localhost`
+5. Backend API is at `http://localhost:3001`
 
 ## Development
-To develop frontend or backend individually, use standard Node.js tools inside the respective directories.
+To develop frontend or backend individually, navigate into the respective directory and use standard Node.js tools:
+- `cd client && npm start`
+- `cd server && npm run dev`
+*/
