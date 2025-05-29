@@ -2,18 +2,17 @@
 FROM node:18-alpine AS builder
 WORKDIR /app
 
-# Install dependencies
+# Install deps and build
 COPY client/package*.json ./
 RUN npm install
-
-# Copy the rest of the client code and build
 COPY client/ .
 RUN npm run build
 
-# Stage 2: Serve the build folder using `serve`
+# Stage 2: Serve with serve
 FROM node:18-alpine AS runner
 WORKDIR /app
 RUN npm install -g serve
-COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/build ./build
 EXPOSE 3001
-CMD ["serve", "-s", "dist", "-l", "3001"]
+CMD ["serve", "-s", "build", "-l", "3001"]
+
