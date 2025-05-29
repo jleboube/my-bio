@@ -2,9 +2,10 @@
 services:
   frontend:
     build:
-      context: ./client
+      context: .
+      dockerfile: client/Dockerfile
     ports:
-      - "80:80"
+      - "3001:3001"
     depends_on:
       - backend
 

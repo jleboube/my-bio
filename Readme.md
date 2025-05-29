@@ -3,18 +3,22 @@
 
 # Project Structure
 
+
 ```
-project-root/
-├── client/                 # React frontend
-│   ├── Dockerfile          # Frontend Dockerfile
-│   └── ...                 # All frontend code
-├── server/                 # Node.js backend
-│   ├── Dockerfile          # Backend Dockerfile
-│   └── ...                 # All backend code
+my-bio/
+├── backend/
+│   └── ... backend code ...
+├── client/
+│   ├── package.json
+│   ├── src/
+│   ├── public/
+│   └── ...
+├── client/Dockerfile
 ├── docker-compose.yml
-├── nginx.conf              # For frontend nginx
-└── README.md
+└── ...
 ```
+
+
 
 # User Profile Web App
 
